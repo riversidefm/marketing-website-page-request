@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Request — Riverside</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Page Request</h1>
+      <p>Submit a request to create a new page on riverside.com. Fields marked <span class="required">*</span> are required.</p>
+    </header>
+
+    <form id="page-request-form" novalidate>
+
+      <div class="field field--readonly" id="field-dateRequested">
+        <label for="dateRequested">Submitted At</label>
+        <input type="text" id="dateRequested" name="dateRequested" readonly>
+      </div>
+
+      <div class="field" id="field-requesterEmail">
+        <label for="requesterEmail">Requester Email <span class="required">*</span></label>
+        <input type="email" id="requesterEmail" name="requesterEmail" placeholder="you@riverside.fm" autocomplete="email">
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field" id="field-pageTitle">
+        <label for="pageTitle">Page Title <span class="required">*</span></label>
+        <input type="text" id="pageTitle" name="pageTitle" placeholder="e.g. Features Overview">
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field" id="field-purpose">
+        <label for="purpose">Purpose <span class="required">*</span></label>
+        <textarea id="purpose" name="purpose" placeholder="Describe the goal of this page and what it should achieve"></textarea>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field" id="field-metaTitle">
+        <label for="metaTitle">Meta Title <span class="required">*</span></label>
+        <p class="helper">The page title shown in search engine results and browser tabs.</p>
+        <input type="text" id="metaTitle" name="metaTitle" placeholder="e.g. Riverside — Record Podcast & Video Remotely">
+        <span class="char-counter" id="metaTitle-counter">0 / 60</span>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field" id="field-metaDescription">
+        <label for="metaDescription">Meta Description <span class="required">*</span></label>
+        <p class="helper">The snippet shown below your page title in search results.</p>
+        <textarea id="metaDescription" name="metaDescription" placeholder="e.g. Record studio-quality podcasts and videos remotely with Riverside. Easy setup, no downloads needed."></textarea>
+        <span class="char-counter" id="metaDescription-counter">0 / 155</span>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field" id="field-slug">
+        <label for="slug">Slug <span class="required">*</span></label>
+        <p class="helper">URL-friendly path — lowercase letters, numbers, and hyphens only. Example: <code>my-new-page</code></p>
+        <input type="text" id="slug" name="slug" placeholder="my-new-page">
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field field--checkbox" id="field-noindex">
+        <label class="checkbox-label" for="noindex">
+          <input type="checkbox" id="noindex" name="noindex">
+          <span>Prevent search engines from indexing this page (noindex tag)</span>
+        </label>
+      </div>
+
+      <div class="field" id="field-design">
+        <label for="design">Design</label>
+        <p class="helper">Paste the Figma file URL for this page's design.</p>
+        <input type="url" id="design" name="design" placeholder="https://www.figma.com/file/...">
+        <span class="error-message"></span>
+      </div>
+
+      <div class="field" id="field-copy">
+        <label for="copy">Copy</label>
+        <p class="helper">Paste the Google Doc URL containing the page copy.</p>
+        <input type="url" id="copy" name="copy" placeholder="https://docs.google.com/document/d/...">
+        <span class="error-message"></span>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" id="submit-btn">
+          <span class="btn-text">Submit Request</span>
+          <span class="btn-loading" hidden>Submitting…</span>
+        </button>
+      </div>
+
+    </form>
+
+    <div id="success-message" class="alert alert--success" hidden>
+      <strong>Request submitted!</strong> We'll be in touch soon.
+    </div>
+
+    <div id="error-message" class="alert alert--error" hidden>
+      <strong>Something went wrong.</strong> Please try again or email <a href="mailto:yuval.tsabar@riverside.fm">yuval.tsabar@riverside.fm</a> directly.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
