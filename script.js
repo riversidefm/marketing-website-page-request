@@ -87,12 +87,17 @@ function clearError(fieldId) {
 
 // Per-field validators — return an error string or null if valid.
 const fieldValidators = {
-  requesterEmail: (val) => {
+  submittedBy: (val) => {
     if (!val) return 'Email is required.';
     if (!EMAIL_REGEX.test(val)) return 'Enter a valid email address.';
     return null;
   },
-  pageTitle: (val) => val ? null : 'Page title is required.',
+  requestedBy: (val) => {
+    if (!val) return 'Email is required.';
+    if (!EMAIL_REGEX.test(val)) return 'Enter a valid email address.';
+    return null;
+  },
+  pageName: (val) => val ? null : 'Page name is required.',
   purpose: (val) => val ? null : 'Purpose is required.',
   metaTitle: (val) => val ? null : 'Meta title is required.',
   metaDescription: (val) => val ? null : 'Meta description is required.',
@@ -162,8 +167,9 @@ document.getElementById('page-request-form').addEventListener('submit', async fu
 
   const formData = {
     'Submitted At': dateField.value,
-    'Requester Email': document.getElementById('requesterEmail').value.trim(),
-    'Page Title': document.getElementById('pageTitle').value.trim(),
+    'Submitted By': document.getElementById('submittedBy').value.trim(),
+    'Requested By': document.getElementById('requestedBy').value.trim(),
+    'Page Name': document.getElementById('pageName').value.trim(),
     'Purpose': document.getElementById('purpose').value.trim(),
     'Meta Title': document.getElementById('metaTitle').value.trim(),
     'Meta Description': document.getElementById('metaDescription').value.trim(),
@@ -182,7 +188,7 @@ document.getElementById('page-request-form').addEventListener('submit', async fu
 
   const payload = {
     access_key: WEB3FORMS_ACCESS_KEY,
-    subject: `Page Request: ${formData['Page Title']}`,
+    subject: `Page Request: ${formData['Page Name']}`,
     from_name: 'Riverside Page Request Form',
     ...formData,
   };
