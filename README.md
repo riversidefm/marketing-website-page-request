@@ -76,8 +76,9 @@ Then open [http://localhost:8080](http://localhost:8080).
 | Field | Required | Notes |
 |---|---|---|
 | Submitted At | — | Auto-populated with date and time, read-only |
-| Requester Email | Yes | Must be a valid email |
-| Page Title | Yes | |
+| Submitted By | Yes | Must be a valid email |
+| Requested By | Yes | Email of whoever originally requested the page |
+| Page Name | Yes | |
 | Purpose | Yes | |
 | Meta Title | Yes | Max 60 characters recommended |
 | Meta Description | Yes | Max 155 characters recommended |
