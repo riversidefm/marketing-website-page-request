@@ -174,7 +174,7 @@ document.getElementById('page-request-form').addEventListener('submit', async fu
     'Meta Title': document.getElementById('metaTitle').value.trim(),
     'Meta Description': document.getElementById('metaDescription').value.trim(),
     'Slug': document.getElementById('slug').value.trim(),
-    'Noindex': document.getElementById('noindex').checked ? 'Yes' : 'No',
+    'Add noindex Tag*': document.getElementById('noindex').checked ? 'Yes' : 'No',
     'Design': document.getElementById('design').value.trim(),
     'Copy': document.getElementById('copy').value.trim(),
   };
