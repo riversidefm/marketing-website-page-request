@@ -2,6 +2,8 @@
 
 An internal form for requesting new pages on riverside.com. Submissions are sent to a Google Sheet and trigger an email notification.
 
+**Live URL:** [https://marketing-website-page-request-d5pd.vercel.app/](https://marketing-website-page-request-d5pd.vercel.app/) — auto-updates on every push to `main`
+
 ---
 
 ## How it works
