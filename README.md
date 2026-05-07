@@ -37,6 +37,8 @@ const APPS_SCRIPT_URL = '...';      // from Google Apps Script deployment
 
 ## Google Sheets setup
 
+**Sheet URL:** [https://docs.google.com/spreadsheets/d/14zsyxp5nFh9pU3e_d3gfasXTVgdfgjJ_Pfj032bXJwY/](https://docs.google.com/spreadsheets/d/14zsyxp5nFh9pU3e_d3gfasXTVgdfgjJ_Pfj032bXJwY/)
+
 1. Open the Google Sheet
 2. Go to **Extensions → Apps Script**
 3. Replace any existing code with the contents of `apps-script.gs` → Save
